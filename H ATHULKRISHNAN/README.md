@@ -26,19 +26,34 @@ The Hate Speech Detection project focuses on identifying and categorizing langua
 - **XGBoost**
 - **AdaBoost**
 
-## Results
+## Model Comparison Results
+
+### Results
 
 | Model                  | Training Accuracy | Testing Accuracy | Precision | Recall  | F1 Score |
 |------------------------|-------------------|------------------|-----------|---------|----------|
-| Logistic Regression     | 94.72%            | 93.07%           | 93.56%    | 92.58%  | 93.07%   |
-| Random Forest           | 88.38%            | 87.16%           | 94.05%    | 79.47%  | 86.15%   |
-| K-Nearest Neighbors     | 92.14%            | 86.25%           | 94.42%    | 77.19%  | 84.94%   |
-| XGBoost                | 89.13%            | 88.53%           | 95.81%    | 80.70%  | 87.61%   |
-| AdaBoost               | 86.08%            | 86.05%           | 94.23%    | 76.95%  | 84.72%   |
+| Logistic Regression     | 96.22%            | 94.11%           | 93.03%    | 95.36%  | 94.18%   |
+| Random Forest           | 92.57%            | 90.37%           | 89.79%    | 91.07%  | 90.43%   |
+| K-Nearest Neighbors     | 99.49%            | 67.59%           | 60.73%    | 99.44%  | 75.40%   |
+| XGBoost                | 89.36%            | 88.80%           | 95.34%    | 81.56%  | 87.92%   |
+| AdaBoost               | 88.28%            | 88.47%           | 95.13%    | 81.07%  | 87.54%   |
 
 ### Conclusion
-- **Logistic Regression** achieved the highest testing accuracy at **93.07%**.
-- **XGBoost** exhibited the best **precision** (95.81%) while **Logistic Regression** had the highest **F1 Score** (93.07%).
+
+- **Logistic Regression** achieved the highest testing accuracy at **94.11%**.
+- **XGBoost** exhibited the best **precision** (95.34%) while **Logistic Regression** had the highest **F1 Score** (94.18%).
+- **Random Forest** performed consistently well with a good balance between **precision** and **recall**, showing **90.43%** for F1 Score.
+- **K-Nearest Neighbors** had the highest **training accuracy** (99.49%), but its **testing accuracy** was much lower (67.59%), indicating potential overfitting.
+- **AdaBoost** had a balanced performance with good **precision** (95.13%) and **recall** (81.07%).
+
+### Best Model Based on Testing Accuracy:
+- **Model**: Logistic Regression
+- **Training Accuracy**: 96.22%
+- **Testing Accuracy**: 94.11%
+- **Precision**: 93.03%
+- **Recall**: 95.36%
+- **F1 Score**: 94.18%
+
 
 This project demonstrates the effective application of machine learning techniques to classify hate speech from text data.
 
