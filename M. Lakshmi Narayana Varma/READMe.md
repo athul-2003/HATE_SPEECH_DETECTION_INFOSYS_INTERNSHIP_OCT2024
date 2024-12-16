@@ -88,4 +88,7 @@ The Hate Speech Detection project is designed to find and classify harmful langu
 - **Support Vector Machine (SVM)** delivered the highest accuracy (**99.58%**), precision, and recall, making it the best-performing model.  
 - Logistic Regression followed closely with a high F1 Score (**99%**) and accuracy.  
 - LSTM achieved excellent results with fine-tuned hyperparameters, producing a test accuracy of **98.54%**.  
-- Gradient Boosting and Random Forest models performed well but were outperformed by SVM and LSTM.  
+- Gradient Boosting and Random Forest models performed well but were outperformed by SVM and LSTM.
+
+  Name : M.Lakshmi Narayana Varma
+  Email : [varmamudhuluri@gmail.com](mailto:varmamudhuluri@gmail.com)
