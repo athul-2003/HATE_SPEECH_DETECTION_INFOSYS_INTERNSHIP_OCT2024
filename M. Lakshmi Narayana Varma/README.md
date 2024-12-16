@@ -1,7 +1,16 @@
 # Hate Speech Detection  
 
 ## Introduction  
-The Hate Speech Detection project is designed to find and classify harmful language that targets people or groups based on their race, gender, religion, or other characteristics. used Deep Learning Model (LSTM) and machine learning models to analyze text from social media and other online platforms to detect hate speech effectively
+The Hate Speech Detection project is designed to find and classify harmful language that targets people or groups based on their race, gender, religion, or other characteristics. Used Deep Learning Model (LSTM) and machine learning models to analyze text from social media and other online platforms to detect hate speech effectively.  
+
+## Dataset Overview  
+**Dataset**: Labelled Hate Speech Detection  
+**Content**: The dataset contains 3,000 comments and posts scraped from social media platforms including Reddit, Twitter, and 4Chan in 2022.  
+**Dataset Columns**: `Platform`, `Comment`, `Hateful`  
+**Labels (Hateful)**:  
+- `0`: Non-Hateful (comments not containing hate speech)  
+- `1`: Hateful (comments containing hate speech)  
+
 ## Steps Performed  
 1. **Data Preprocessing**:  
    - Removed missing values.  
@@ -15,7 +24,7 @@ The Hate Speech Detection project is designed to find and classify harmful langu
    - Utilized TF-IDF (Term Frequency-Inverse Document Frequency) vectorization to convert text into numerical inputs for models.  
 
 4. **Model Training & Evaluation**:  
-   - Data was split into training ,testing and validation sets.  
+   - Data was split into training, testing, and validation sets.  
    - Trained several machine learning and deep learning models, evaluating their performance using precision, recall, F1-score, and accuracy.  
 
 ## Models Used  
@@ -88,9 +97,7 @@ The Hate Speech Detection project is designed to find and classify harmful langu
 - **Support Vector Machine (SVM)** delivered the highest accuracy (**99.58%**), precision, and recall, making it the best-performing model.  
 - Logistic Regression followed closely with a high F1 Score (**99%**) and accuracy.  
 - LSTM achieved excellent results with fine-tuned hyperparameters, producing a test accuracy of **98.54%**.  
-- Gradient Boosting and Random Forest models performed well but were outperformed by SVM and LSTM.
-
-
+- Gradient Boosting and Random Forest models performed well but were outperformed by SVM and LSTM.  
 
 **Name:** M.Lakshmi Narayana Varma  
 **Email:** [varmamudhuluri@gmail.com](mailto:varmamudhuluri@gmail.com)
