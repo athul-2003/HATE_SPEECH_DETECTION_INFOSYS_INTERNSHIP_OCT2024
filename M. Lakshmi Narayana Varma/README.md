@@ -90,7 +90,8 @@ The Hate Speech Detection project is designed to find and classify harmful langu
 - LSTM achieved excellent results with fine-tuned hyperparameters, producing a test accuracy of **98.54%**.  
 - Gradient Boosting and Random Forest models performed well but were outperformed by SVM and LSTM.
 
-## Author
 
-**Name : M.Lakshmi Narayana Varma**
-Email : [varmamudhuluri@gmail.com](mailto:varmamudhuluri@gmail.com)
+
+**Name:** M.Lakshmi Narayana Varma  
+**Email:** [varmamudhuluri@gmail.com](mailto:varmamudhuluri@gmail.com)
+
