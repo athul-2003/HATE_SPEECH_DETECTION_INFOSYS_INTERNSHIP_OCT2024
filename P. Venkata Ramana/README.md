@@ -98,6 +98,8 @@ The project utilizes the **Hate Speech and Offensive Language** dataset, which c
 - Achieved **95% accuracy** on test data using a Logistic Regression model.
 - Improved classification for minority classes (hate speech) using **SMOTE**.
 - Demonstrated the utility of **TF-IDF vectorization** for text-based feature extraction.
+- Here is the classification report.
+![image](https://github.com/user-attachments/assets/6d97c156-b808-4cae-a41e-e93b3cc65fcd)
 
 ---
 
