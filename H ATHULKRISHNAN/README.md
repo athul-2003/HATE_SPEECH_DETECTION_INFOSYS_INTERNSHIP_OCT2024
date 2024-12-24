@@ -19,7 +19,7 @@ The Hate Speech Detection project focuses on identifying and categorizing langua
    - Split the data into training and testing sets.
    - Trained multiple machine learning models and evaluated their performance using cross-validation and performance metrics.
 
-## Models Used
+## Algorithms Used
 - **Logistic Regression**
 - **Random Forest Classifier**
 - **K-Nearest Neighbors**
