@@ -226,3 +226,65 @@ results.to_csv(output_path, index=False)
 print("Best Parameters:", best_params)
 print("Classification Report:\n", report)
 print(f"Results saved to: {output_path}")
+#improved the above code by changing parameters
+# Import necessary libraries
+import pandas as pd
+import re
+import string
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.svm import SVC
+from sklearn.metrics import classification_report, accuracy_score
+
+# Load the dataset
+file_path = "/content/cleaned .csv"
+data = pd.read_csv("/content/cleaned .csv")
+
+# Text preprocessing function
+def preprocess_text(text):
+    text = text.lower()  # Lowercase
+    text = re.sub(r'@\w+', '', text)  # Remove mentions
+    text = re.sub(r'http\S+|www\S+', '', text)  # Remove URLs
+    text = text.translate(str.maketrans('', '', string.punctuation))  # Remove punctuation
+    text = re.sub(r'\s+', ' ', text).strip()  # Remove extra spaces
+    return text
+
+# Apply preprocessing
+data['processed_tweet'] = data['tweet'].apply(preprocess_text)
+
+# Feature and target extraction
+X = data['processed_tweet']
+y = data['class']
+
+# Train-test split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# TF-IDF vectorization
+vectorizer = TfidfVectorizer(max_features=10000, ngram_range=(1, 2))
+X_train_tfidf = vectorizer.fit_transform(X_train)
+X_test_tfidf = vectorizer.transform(X_test)
+
+# SVM model with hyperparameter tuning
+param_grid = {
+    'C': [0.1, 1, 10],  # Regularization parameter
+    'kernel': ['linear', 'rbf'],  # Linear and RBF kernels
+    'gamma': ['scale', 'auto']  # Kernel coefficient for RBF
+}
+svm_model_tuned = GridSearchCV(SVC(random_state=42), param_grid, cv=5, scoring='accuracy', verbose=1, n_jobs=-1)
+svm_model_tuned.fit(X_train_tfidf, y_train)
+
+# Best model
+best_svm_model = svm_model_tuned.best_estimator_
+
+# Evaluate the model
+y_train_pred = best_svm_model.predict(X_train_tfidf)
+y_test_pred = best_svm_model.predict(X_test_tfidf)
+
+# Accuracies
+training_accuracy = accuracy_score(y_train, y_train_pred)
+testing_accuracy = accuracy_score(y_test, y_test_pred)
+
+# Classification report
+report = classification_report(y_test, y_test_pred)
+
+training_accuracy, testing_accuracy, svm_model_tuned.best_params_, report
